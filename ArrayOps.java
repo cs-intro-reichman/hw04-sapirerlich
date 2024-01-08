@@ -36,23 +36,26 @@ public static int MinValue(int [] array) {
         return min;
     }
 
-    public static int MaxValue(int [] array) {
+    public static int MaxValueIndex(int [] array) {
         int max = MinValue(array);
+        int max_index = 0;
+
         for (int i = 0 ; i <array.length ; i++){
             if (array[i] > max){
                 max = array[i];
+                max_index = i;
             }
 
         }
-        return max;
+        return max_index;
     }
 
 
     public static int secondMaxValue(int [] array) {
-        int max = MaxValue(array);
+        int max_index = MaxValueIndex(array);
         int second_max = MinValue(array);
         for (int i = 0 ; i < array.length ; i++){
-            if (array[i] > second_max && array[i] != max){
+            if (array[i] > second_max && i != max_index){
                 second_max = array[i];
             }
             
