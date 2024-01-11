@@ -132,7 +132,6 @@ public class StringOps {
             if (string.charAt(i)==chr){
                 all_index[pointer]=i;
                 pointer++;
-
             }
 
         }
