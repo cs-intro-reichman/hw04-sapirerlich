@@ -130,7 +130,7 @@ public class StringOps {
         int pointer=0;
         for (int i=0; i<string.length();i++){
             if (string.charAt(i)==chr){
-                all_index[pointer]=chr;
+                all_index[pointer]=i;
                 pointer++;
 
             }
