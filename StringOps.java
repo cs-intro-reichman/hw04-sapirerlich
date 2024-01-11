@@ -22,8 +22,8 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String camelCase=camelCase(" tWo    wordS");
-        System.out.println(camelCase);
+        // String camelCase=camelCase(" tWo    wordS");
+        // System.out.println(camelCase);
         // int [] allIndexOf=allIndexOf("Hello world",'l');
         // System.out.print(allIndexOf);
 
