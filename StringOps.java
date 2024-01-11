@@ -27,6 +27,7 @@ public class StringOps {
         // int [] allIndexOf=allIndexOf("Hello world",'l');
         // System.out.print(allIndexOf);
 
+
         
     }
 
@@ -62,36 +63,29 @@ public class StringOps {
     public static String camelCase (String string) {
         int space_index = string.indexOf(" ");
         String output = "";
-        String substring ;
-        System.out.println(space_index);
-        if (space_index == 0){
-            substring = string.substring(space_index+1);
+        String substring=string;
+        String first_word;
+        while (space_index==0)
+        {
+            string=string.substring(space_index+1);
+            space_index = string.indexOf(" ");
         }
-        else{
-            substring = string.substring(0);
-        }
-        int first_word_len = substring.length();
         if (space_index > 0){
-            first_word_len = space_index;
-        }
-        else{
-            space_index = substring.indexOf(" ");
-            first_word_len = space_index;
-        }
-        
-        for (int i = 0 ; i < first_word_len ; i++){
-                if (substring.charAt(i) >= 'A' && substring.charAt(i) <='Z'){
-                    output = output + (char)(substring.charAt(i)+32);
+            int first_word_len = string.substring(0,space_index).length();
+            first_word =string.substring(0,space_index);
+             for (int i = 0 ; i < first_word_len ; i++){
+                if (first_word.charAt(i) >= 'A' && first_word.charAt(i) <='Z'){
+                    output = output + (char)(first_word.charAt(i)+32);
                 }
                 else{
-                    output = output + (char)(substring.charAt(i));
+                    output = output + (char)(first_word.charAt(i));
                 }
             }
+        }
         substring = substring.substring(space_index+1);
-        while(substring.length()>0){
+        while(space_index != -1){
             space_index = substring.indexOf(" ");
-            System.out.println(space_index);
-            System.out.println(substring);
+           
             int loop_int =0;
             if (space_index == -1){
                 loop_int=substring.length();
@@ -99,9 +93,7 @@ public class StringOps {
             else{
                 loop_int=space_index;
             }
-            System.out.println(substring.length());
             for (int i = 0 ; i <loop_int ; i++){
-                System.out.println(i);
                 if (i == 0){
                     if (substring.charAt(i) >= 'a' && substring.charAt(i) <='z'){
                         output = output + (char)(substring.charAt(i)-32);
@@ -120,26 +112,31 @@ public class StringOps {
             
             }
 
-            if (space_index != -1){
-                substring = substring.substring(space_index+1);
-            }
-            else {
-                substring = "";
-            }
-
-
-
+            substring = substring.substring(space_index+1);
         }
         return output;
     }
 
     public static int[] allIndexOf (String string, char chr) {
-        int[] all_index = new int[string.length()];
-        for (int i = 0; i < string.length() ; i++){
-            if(string.charAt(i) == chr){
-                all_index[i] = i;
+        int count = 0;
+        for (int i=0; i<string.length();i++){
+            if (string.charAt(i)==chr){
+                count++;
+
             }
+
         }
+        int[] all_index = new int[count];
+        int pointer=0;
+        for (int i=0; i<string.length();i++){
+            if (string.charAt(i)==chr){
+                all_index[pointer]=chr;
+                pointer++;
+
+            }
+
+        }
+
         return all_index;
     }
 }
