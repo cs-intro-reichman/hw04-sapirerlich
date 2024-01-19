@@ -34,6 +34,10 @@ public class StringOps {
     public static String capVowelsLowRest(String string) {
         String output = "";
         for (int i = 0 ; i < string.length() ; i++){
+            /* 
+  		why didn't you create a helper isVowel()?
+		could be a lot cleaner
+  		*/
             if (string.charAt(i) == 'a' || string.charAt(i) == 'e' || string.charAt(i) == 'i' ||
             string.charAt(i) == 'o' || string.charAt(i) == 'u'){
                 output = output + (char)(string.charAt(i)-32);
@@ -48,6 +52,11 @@ public class StringOps {
 
 
             }
+                
+/* 
+	  		why didn't you create a helper isLetter()?
+			could be a lot more readable.
+	  		*/
             else if (string.charAt(i)>='A'&& string.charAt(i)<='Z'){
                 output = output + (char)(string.charAt(i)+32);
 
@@ -114,6 +123,9 @@ public class StringOps {
 
             substring = substring.substring(space_index+1);
         }
+        /*
+        your solution is a bit too complex, to many if-else's, and very long.
+            */
         return output;
     }
 
