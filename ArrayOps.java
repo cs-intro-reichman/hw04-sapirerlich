@@ -77,12 +77,13 @@ public static int MinValue(int [] array) {
             if (counter == 0){
             return false;
             }
-
+        // very nice!
         }
         return true;
     }
 
     public static boolean isSorted(int [] array) {
+        // WOW! very good.
         if (isSorted_decreasingly(array) || isSorted_increasingly(array)){
             return true;
         }
@@ -116,7 +117,10 @@ public static int MinValue(int [] array) {
         }
         return false;
     }
-
+    /*
+    I am very very pleased that you have created helpers.
+    Just a note, we usually make them private and not public
+    */
 }
 
 
